@@ -89,10 +89,15 @@
             const password = document.getElementById('password').value;
             const errorMessage = document.getElementById('error-message');
 
-            // Simple validation (you can add your own logic here)
-            if (username === 'admin' && password === 'password') {
+            // Simple validation
+            if (username === 'admin' && password === 'adminpass') { // Password changed to 'adminpass'
+                console.log('Login successful. Redirecting...');
+
+                // Set logged in state
+                localStorage.setItem('loggedIn', 'true'); // Store login state
+
                 // Redirect to the inventory management page on successful login
-                window.location.href = 'index.html'; // Change this to your inventory management page
+                window.location.href = './index.html'; // Use './' to specify the current directory
             } else {
                 errorMessage.textContent = 'Invalid username or password!';
             }
